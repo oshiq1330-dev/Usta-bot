@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+
+.env
+
+data.db
+data_backup.db
+
+*.pdf
+
+bot.py.save
+*.save
+
+core/calculator_backup.py
