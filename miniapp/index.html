@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UstaBot — Do‘kon</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+            <div>
+                <div class="welcome">Xush kelibsiz 👋</div>
+                <h1>🏪 Mening do‘konim</h1>
+            </div>
+
+            <button class="profile-btn">👤</button>
+        </header>
+
+
+        <main>
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+                <span>🔎</span>
+                <input
+                    type="text"
+                    placeholder="Mahsulot qidirish..."
+                >
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="section">
+
+                <h2>Tezkor amallar</h2>
+
+                <div class="quick-actions">
+
+                    <button class="action-card add">
+                        <span>➕</span>
+                        <b>Mahsulot qo‘shish</b>
+                    </button>
+
+                    <button class="action-card">
+                        <span>📦</span>
+                        <b>Mahsulotlar</b>
+                    </button>
+
+                    <button class="action-card">
+                        <span>🛒</span>
+                        <b>Buyurtmalar</b>
+                    </button>
+
+                    <button class="action-card">
+                        <span>💰</span>
+                        <b>Sotuv</b>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="section">
+
+                <h2>Bugungi holat</h2>
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <span>💰</span>
+                        <small>Bugungi savdo</small>
+                        <strong>0 so‘m</strong>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>🛒</span>
+                        <small>Buyurtmalar</small>
+                        <strong>0 ta</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRODUCTS -->
+
+            <section class="section">
+
+                <div class="section-title">
+
+                    <h2>Mahsulotlar</h2>
+
+                    <button class="see-all">
+                        Barchasi →
+                    </button>
+
+                </div>
+
+
+                <div class="empty-products">
+
+                    <div class="empty-icon">📦</div>
+
+                    <h3>Hali mahsulotlar yo‘q</h3>
+
+                    <p>
+                        Do‘koningizga mahsulot qo‘shishni boshlang.
+                    </p>
+
+                    <button class="primary-btn">
+                        ➕ Mahsulot qo‘shish
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- BOTTOM NAVIGATION -->
+
+        <nav class="bottom-nav">
+
+            <button class="active">
+                🏠
+                <span>Bosh sahifa</span>
+            </button>
+
+            <button>
+                📦
+                <span>Mahsulotlar</span>
+            </button>
+
+            <button>
+                🛒
+                <span>Buyurtmalar</span>
+            </button>
+
+            <button>
+                📊
+                <span>Hisobot</span>
+            </button>
+
+            <button>
+                ⚙️
+                <span>Sozlamalar</span>
+            </button>
+
+        </nav>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
