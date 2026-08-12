@@ -87,7 +87,22 @@ document.addEventListener("DOMContentLoaded", () => {
             quantity
         });
 
-        alert("✅ Mahsulot ma'lumotlari tayyor!");
+        const productData = {
+            action: "add_product",
+            name: name,
+            category: category,
+            price: price,
+            unit: unit,
+            quantity: quantity
+        };
+
+        if (window.Telegram && Telegram.WebApp) {
+            Telegram.WebApp.sendData(
+                JSON.stringify(productData)
+            );
+        } else {
+            alert("❌ Telegram Mini App topilmadi");
+        }
 
         addProductModal.classList.add("hidden");
      });
