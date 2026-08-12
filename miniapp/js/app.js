@@ -23,23 +23,74 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // Mahsulot qo‘shish tugmalari
+    // ================================
+    // ADD PRODUCT
+    // ================================
+
+    const addProductModal = document.getElementById("addProductModal");
+    const closeProductModal = document.getElementById("closeProductModal");
+    const saveProduct = document.getElementById("saveProduct");
+
     const addButtons = document.querySelectorAll(
         ".action-card.add, .primary-btn"
     );
 
     addButtons.forEach(button => {
-
         button.addEventListener("click", () => {
-
-            alert(
-                "➕ Mahsulot qo‘shish bo‘limi tez orada ishlaydi."
-            );
-
+            addProductModal.classList.remove("hidden");
         });
-
     });
 
+    closeProductModal.addEventListener("click", () => {
+        addProductModal.classList.add("hidden");
+    });
+
+    addProductModal.addEventListener("click", (event) => {
+        if (event.target === addProductModal) {
+            addProductModal.classList.add("hidden");
+        }
+    });
+
+    saveProduct.addEventListener("click", () => {
+
+        const name = document.getElementById("productName").value.trim();
+        const category = document.getElementById("productCategory").value;
+        const price = document.getElementById("productPrice").value;
+        const unit = document.getElementById("productUnit").value;
+        const quantity = document.getElementById("productQuantity").value;
+
+        if (!name) {
+            alert("❌ Mahsulot nomini kiriting");
+            return;
+        }
+
+        if (!category) {
+            alert("❌ Kategoriyani tanlang");
+            return;
+        }
+
+        if (!price) {
+            alert("❌ Mahsulot narxini kiriting");
+            return;
+        }
+
+        if (!quantity) {
+            alert("❌ Mavjud miqdorni kiriting");
+            return;
+        }
+
+        console.log("Yangi mahsulot:", {
+            name,
+            category,
+            price,
+            unit,
+            quantity
+        });
+
+        alert("✅ Mahsulot ma'lumotlari tayyor!");
+
+        addProductModal.classList.add("hidden");
+     });
 
     // Pastki menyu
     const navButtons = document.querySelectorAll(

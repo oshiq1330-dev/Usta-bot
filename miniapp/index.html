@@ -131,6 +131,69 @@
 
         </main>
 
+        <!-- ADD PRODUCT MODAL -->
+        <div class="modal hidden" id="addProductModal">
+            <div class="modal-box">
+
+                <div class="modal-header">
+                    <h2>➕ Mahsulot qo‘shish</h2>
+                    <button id="closeProductModal">✕</button>
+                </div>
+
+                <label>Mahsulot nomi</label>
+                <input
+                    id="productName"
+                    type="text"
+                    placeholder="Masalan: PPR truba 25"
+                >
+
+                <label>Kategoriya</label>
+                <select id="productCategory">
+                    <option value="">Kategoriyani tanlang</option>
+                    <option>Truba</option>
+                    <option>Fitting</option>
+                    <option>Krannik</option>
+                    <option>Nasos</option>
+                    <option>Jihoz</option>
+                    <option>Boshqa</option>
+                </select>
+
+                <label>Narxi</label>
+                <input
+                    id="productPrice"
+                    type="number"
+                    placeholder="Masalan: 18000"
+                >
+
+                <label>O‘lchov birligi</label>
+                <select id="productUnit">
+                    <option value="dona">Dona</option>
+                    <option value="metr">Metr</option>
+                    <option value="kg">Kg</option>
+                    <option value="litr">Litr</option>
+                    <option value="komplekt">Komplekt</option>
+                </select>
+
+                <label>Mavjud miqdor</label>
+                <input
+                    id="productQuantity"
+                    type="number"
+                    placeholder="Masalan: 120"
+                >
+
+                <label>Mahsulot rasmi</label>
+                <input
+                    id="productImage"
+                    type="file"
+                    accept="image/*"
+                >
+
+                <button class="primary-btn save-product-btn" id="saveProduct">
+                    💾 Mahsulotni saqlash
+                </button>
+
+            </div>
+        </div>
 
         <!-- BOTTOM NAVIGATION -->
 
