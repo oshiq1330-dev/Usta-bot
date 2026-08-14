@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         console.log("Telegram initData:", tg.initData);
+
+        console.log("INIT DATA BOR:", !!tg.initData);
+        console.log("USER ID:", tg.initDataUnsafe?.user?.id);
     }
 
 
