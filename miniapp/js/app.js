@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "Telegram user:",
             tg.initDataUnsafe?.user
         );
+
+        console.log("Telegram initData:", tg.initData);
     }
 
 
