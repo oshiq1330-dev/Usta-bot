@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
 
             console.log("📦 API PRODUCTS:", data);
+            alert(
+                "API javobi:\n" +
+                JSON.stringify(data, null, 2)
+            );
 
             // ================================
             // MAHSULOTLARNI EKRANGA CHIQARISH
@@ -237,5 +241,69 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+
+        // =====================================
+    // PRODUCTS WINDOW
+    // =====================================
+
+    const productsModal =
+        document.getElementById("productsModal");
+
+    const closeProductsModal =
+        document.getElementById("closeProductsModal");
+
+    const productsButton =
+        document.querySelector(
+            ".bottom-nav button:nth-child(2)"
+        );
+
+    const seeAllButton =
+        document.querySelector(".see-all");
+
+    function openProductsModal() {
+        if (productsModal) {
+            productsModal.classList.remove("hidden");
+        }
+    }
+
+    function closeProductsWindow() {
+        if (productsModal) {
+            productsModal.classList.add("hidden");
+        }
+    }
+
+    if (productsButton) {
+        productsButton.addEventListener(
+            "click",
+            openProductsModal
+        );
+    }
+
+    if (seeAllButton) {
+        seeAllButton.addEventListener(
+            "click",
+            openProductsModal
+        );
+    }
+
+    if (closeProductsModal) {
+        closeProductsModal.addEventListener(
+            "click",
+            closeProductsWindow
+        );
+    }
+
+    if (productsModal) {
+        productsModal.addEventListener(
+            "click",
+            (event) => {
+
+                if (event.target === productsModal) {
+                    closeProductsWindow();
+                }
+
+            }
+        );
+    }
 
 });
