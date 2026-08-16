@@ -65,6 +65,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log("📦 API PRODUCTS:", data);
 
+            // ================================
+            // MAHSULOTLARNI EKRANGA CHIQARISH
+            // ================================
+
+            const productsList = document.getElementById("productsList");
+
+            if (!productsList) {
+                console.error("❌ productsList topilmadi");
+                return;
+            }
+
+            productsList.innerHTML = "";
+
+            if (!Array.isArray(data) || data.length === 0) {
+                productsList.innerHTML = `
+                    <div class="empty-products">
+                        <div class="empty-icon">📦</div>
+                        <h3>Hali mahsulotlar yo‘q</h3>
+                        <p>Do‘koningizga mahsulot qo‘shishni boshlang.</p>
+                    </div>
+                `;
+
+                return;
+            }
+
+            data.forEach(product => {
+
+                const card = document.createElement("div");
+
+                card.className = "product-card";
+
+                card.innerHTML = `
+                    <div class="product-icon">📦</div>
+
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+
+                        <p class="product-category">
+                            ${product.category || ""}
+                        </p>
+
+                        <p class="product-price">
+                            ${Number(product.price).toLocaleString("uz-UZ")} so‘m
+                            / ${product.unit || "dona"}
+                        </p>
+
+                        <p class="product-quantity">
+                            Mavjud: ${product.quantity}
+                        </p>
+                    </div>
+                `;
+
+                productsList.appendChild(card);
+            });
+
         } catch (error) {
             console.error("❌ API ERROR:", error);
         }
