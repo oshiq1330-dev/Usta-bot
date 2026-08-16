@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const API_URL = "https://rough-colorado-amendment-brick.trycloudflare.com";
 
     async function loadProducts() {
+        console.log("🔥 loadProducts() ishladi");
+
         try {
             const tg = Telegram.WebApp;
 
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    console.log("🔥 LOAD PRODUCTS START");
     loadProducts();
 
     // ================================
