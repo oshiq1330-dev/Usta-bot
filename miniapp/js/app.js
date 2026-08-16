@@ -27,6 +27,40 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("USER ID:", tg.initDataUnsafe?.user?.id);
     }
 
+    // ================================
+    // API
+    // ================================
+
+    const API_URL = "https://rough-colorado-amendment-brick.trycloudflare.com";
+
+    async function loadProducts() {
+        try {
+            const tg = Telegram.WebApp;
+
+            if (!tg.initData) {
+                console.error("❌ Telegram initData mavjud emas");
+                return;
+            }
+
+            const response = await fetch(
+                `${API_URL}/api/products`,
+                {
+                    headers: {
+                        "X-Telegram-Init-Data": tg.initData
+                    }
+                }
+            );
+
+            const data = await response.json();
+
+            console.log("📦 API PRODUCTS:", data);
+
+        } catch (error) {
+            console.error("❌ API ERROR:", error);
+        }
+    }
+
+    loadProducts();
 
     // ================================
     // ADD PRODUCT
