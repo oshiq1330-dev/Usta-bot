@@ -41,7 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const tg = Telegram.WebApp;
 
-            alert("INIT DATA: " + (tg.initData ? "BOR ✅" : "YO‘Q ❌"));
+            alert(
+                "initData: " + (tg.initData ? "BOR ✅" : "YO‘Q ❌") +
+                "\nuser: " + (tg.initDataUnsafe?.user?.id || "YO‘Q ❌") +
+                "\nplatform: " + (tg.platform || "noma'lum")
+            );
 
             if (!tg.initData) {
                 console.error("❌ Telegram initData mavjud emas");
