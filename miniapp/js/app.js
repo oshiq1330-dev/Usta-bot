@@ -75,12 +75,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const productsList = document.getElementById("productsList");
 
+            const fullProductsList = document.getElementById("fullProductsList");
+
             if (!productsList) {
                 console.error("❌ productsList topilmadi");
                 return;
             }
 
-            productsList.innerHTML = "";
+                        productsList.innerHTML = "";
+
+                                if (fullProductsList)
+                        {
+
+                        fullProductsList.innerHTML = "";
+                                }
 
             if (!Array.isArray(data) || data.length === 0) {
                 productsList.innerHTML = `
@@ -122,6 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
 
                 productsList.appendChild(card);
+
+                                if (fullProductsList) {
+                                    const fullCard = card.cloneNode(true);
+                                          fullProductsList.appendChild(fullCard);
+                                 }
             });
 
         } catch (error) {
