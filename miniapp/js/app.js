@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const API_URL = "https://rough-colorado-amendment-brick.trycloudflare.com";
 
     async function loadProducts() {
+        alert("🔥 LOADPRODUCTS FUNKSIYAGA KIRDI");
         console.log("🔥 loadProducts() ishladi");
 
         try {
