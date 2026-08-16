@@ -5,6 +5,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("UstaBot Mini App ishga tushdi");
+    alert("🔥 USTABOT JS ISHLADI");
 
     // Telegram Mini App
     if (window.Telegram && Telegram.WebApp) {
