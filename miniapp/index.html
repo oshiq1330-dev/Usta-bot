@@ -248,6 +248,47 @@
                 >
                 </div>
 
+                <!-- ADD TO CART MODAL -->
+
+                <div class="quantity-modal hidden" id="quantityModal">
+
+                    <div class="quantity-box">
+
+                        <div class="modal-header">
+                            <h2 id="quantityProductName">
+                                🛒 Savatga qo‘shish
+                            </h2>
+
+                            <button id="closeQuantityModal">
+                                ✕
+                            </button>
+                        </div>
+
+                        <p id="quantityProductInfo"></p>
+
+                        <label id="quantityLabel">
+                            Miqdor
+                        </label>
+
+                        <input
+                            id="quantityInput"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Miqdorni kiriting"
+                        >
+
+                        <button
+                            class="primary-btn"
+                            id="confirmAddToCart"
+                        >
+                            🛒 Savatga qo‘shish
+                        </button>
+
+                    </div>
+
+                </div>
+
                 <button
                     class="floating-cart"
                     id="openCartButton"

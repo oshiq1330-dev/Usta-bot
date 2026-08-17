@@ -126,6 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="product-quantity">
                             Mavjud: ${product.quantity}
                         </p>
+
+                        <button
+                            class="add-to-cart-btn"
+                            data-product-id="${product.id}"
+                        >
+                            🛒 Savatga qo‘shish
+                        </button>
+
                     </div>
                 `;
 
@@ -318,5 +326,94 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
     }
+    // =====================================
+    // ADD TO CART - QUANTITY WINDOW
+    // =====================================
 
+    const quantityModal =
+        document.getElementById("quantityModal");
+
+    const closeQuantityModal =
+        document.getElementById("closeQuantityModal");
+
+    const quantityProductName =
+        document.getElementById("quantityProductName");
+
+    const quantityProductInfo =
+        document.getElementById("quantityProductInfo");
+
+    const quantityLabel =
+        document.getElementById("quantityLabel");
+
+    const quantityInput =
+        document.getElementById("quantityInput");
+
+    const confirmAddToCart =
+        document.getElementById("confirmAddToCart");
+
+    let selectedProduct = null;
+
+
+    document.addEventListener("click", (event) => {
+
+        const button =
+            event.target.closest(".add-to-cart-btn");
+
+        if (!button) {
+            return;
+        }
+
+        const productId =
+            Number(button.dataset.productId);
+
+        console.log(
+            "🛒 Tanlangan mahsulot ID:",
+            productId
+        );
+
+        // Mahsulot ma'lumotini topish
+        // Keyingi bosqichda API ma'lumotidan foydalanamiz
+
+        if (quantityModal) {
+            quantityModal.classList.remove("hidden");
+        }
+
+        if (quantityInput) {
+            quantityInput.value = "";
+            quantityInput.focus();
+        }
+
+    });
+
+
+    if (closeQuantityModal) {
+
+        closeQuantityModal.addEventListener(
+            "click",
+            () => {
+
+                quantityModal.classList.add("hidden");
+
+            }
+        );
+
+    }
+
+
+    if (quantityModal) {
+
+        quantityModal.addEventListener(
+            "click",
+            (event) => {
+
+                if (event.target === quantityModal) {
+
+                    quantityModal.classList.add("hidden");
+
+                }
+
+            }
+        );
+
+    }
 });
